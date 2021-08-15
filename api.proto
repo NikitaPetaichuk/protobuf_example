@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package squarecalculator;
+
+option go_package = "github.com/NikitaPetaichuk/protobufexample";
+
+message CalcSquareRequest {
+    string text = 1;
+    float number = 2;
+}
+
+message CalcSquareResponse {
+    string text = 1;
+    float square = 2;
+}
+
+service SquareCalculator {
+    rpc CalcSquare (CalcSquareRequest) returns (CalcSquareResponse);
+}
